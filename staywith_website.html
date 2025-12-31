@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay With - Official</title>
+    <style>
+        @font-face {
+            font-family: 'Holise';
+            src: url('Holise-RegularItalic.woff2') format('woff2');
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Holise', serif;
+            background: linear-gradient(135deg, #f5f0eb 0%, #e8dfd6 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 72px;
+            color: #8b7865;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .tagline {
+            font-size: 20px;
+            color: #a89888;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            cursor: pointer;
+            font-size: 48px;
+            color: #c4a68a;
+            transition: all 0.4s ease;
+            padding: 20px 40px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .nav-item:hover {
+            color: #8b7865;
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-item.active {
+            color: #6b5d52;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .content-section {
+            display: none;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 64px;
+            color: #c4a68a;
+            margin-bottom: 40px;
+        }
+
+        .section-description {
+            font-size: 24px;
+            color: #8b7865;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .infused-content {
+            background: rgba(255, 255, 255, 0.4);
+            padding: 50px;
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+
+        .inspired-content {
+            background: rgba(255, 255, 255, 0.4);
+            padding: 50px;
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 60px;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 20px;
+            color: #8b7865;
+            margin-bottom: 10px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #c4a68a;
+            border-radius: 10px;
+            font-size: 18px;
+            font-family: 'Holise', serif;
+            background: rgba(255, 255, 255, 0.8);
+            color: #6b5d52;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background: #c4a68a;
+            color: white;
+            padding: 18px 60px;
+            border: none;
+            border-radius: 10px;
+            font-size: 22px;
+            font-family: 'Holise', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #8b7865;
+            transform: translateY(-2px);
+        }
+
+        .hashtags {
+            margin-top: 80px;
+            font-size: 22px;
+            color: #a89888;
+        }
+
+        .hashtag {
+            color: #8b7865;
+            margin: 0 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0 40px;
+            color: #a89888;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 48px;
+            }
+
+            .nav-item {
+                font-size: 32px;
+                padding: 15px 30px;
+            }
+
+            .section-title {
+                font-size: 42px;
+            }
+
+            .section-description {
+                font-size: 18px;
+            }
+
+            .contact-form {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">stay with</div>
+            <div class="tagline">영감을 채우고, 일상에 스며들고, 함께 머무다.</div>
+        </header>
+
+        <nav>
+            <div class="nav-item active" data-section="with">stay with</div>
+            <div class="nav-item" data-section="infused">stay infused</div>
+            <div class="nav-item" data-section="inspired">stay inspired</div>
+            <div class="nav-item" data-section="contact">contact</div>
+        </nav>
+
+        <div class="content-section active" id="with">
+            <div class="section-title">stay with</div>
+            <div class="section-description">
+                오래 머물고 싶은 가치와 관계<br>
+                "좋은 것들과 오래 머무는 법."<br><br>
+                stay with는 여행과 공간, 그리고 사람과의 연결에서 오래 머물고 싶은 가치들을 발견합니다.<br>
+                머물렀던 도시의 풍경, 기억에 남는 공간의 감각, 여행에서 만난 사람들과의 이야기를 기록합니다.<br>
+                감성적인 여행 경험과 공간의 온기, 그리고 소중한 만남의 순간들을 나누며,<br>
+                우리가 다시 찾고 싶고 함께 머물고 싶은 장소와 관계를 큐레이션합니다.
+            </div>
+        </div>
+
+        <div class="content-section" id="infused">
+            <div class="section-title">stay infused</div>
+            <div class="infused-content">
+                <div class="section-description">
+                    "나의 세계에 스며드는 것들."<br><br>
+                    stay infused는 감각적인 디테일이 일상에 스며드는 방식을 탐구합니다.<br><br>
+                    향기, 색감, 공간의 분위기처럼 미묘하지만 분명히 존재하는 감각 높은 요소들에 집중합니다.<br>
+                    여행에서 가져온 오브제, 좋아하는 브랜드, 내가 고른 한 잔의 커피.<br>
+                    그 모든 것이 나의 세계를 구성합니다.<br><br>
+                    감각은 스며들고, 삶은 깊어진다.
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="inspired">
+            <div class="section-title">stay inspired</div>
+            <div class="inspired-content">
+                <div class="section-description">
+                    stay inspired는 감각적인 시선으로 일상, 공간, 루틴을 다시 바라보게 합니다.<br><br>
+                    여행지의 건축, 공간의 빛, 모닝 루틴의 작은 순간.<br>
+                    사람들의 이야기에서 받은 영감의 조각들을 기록합니다.<br>
+                    우리가 스쳐 지나던 그 조각들을 기록해 당신의 취향과 루틴이 되고,<br>
+                    결국 당신만의 라이프스타일의 힘니다.<br><br>
+                    일상을 감각으로 다시 보는 연습.<br><br>
+                    당신의 매일에 영감을 더하고 싶을 때,
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="contact">
+            <div class="section-title">contact</div>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <div class="hashtags">
+            <span class="hashtag">#staywith</span>
+            <span class="hashtag">#stayinfused</span>
+            <span class="hashtag">#stayinspired</span>
+        </div>
+
+        <footer>
+            <p>stay with © All rights reserved</p>
+            <p>stay.with.official</p>
+        </footer>
+    </div>
+
+    <script>
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.content-section');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const targetSection = item.getAttribute('data-section');
+                
+                navItems.forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
+                
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                document.getElementById(targetSection).classList.add('active');
+                
+                window.scrollTo({
+                    top: document.getElementById(targetSection).offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('메시지가 전송되었습니다. 감사합니다!');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
